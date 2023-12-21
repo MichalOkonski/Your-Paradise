@@ -7,20 +7,21 @@
 .white-block {
     position: absolute;
     height: 40px;
-    width: 60%;
+    width: 50%;
     background-color: $pure-white;
 
     &-left {
         bottom: 0;
         left: -50px;
-
+        transform: skew(45deg);
     }
 
     &-right {
         bottom: 0;
-        left: -50px;
+        right: -50px;
         transform: skew(45deg);
     }
+}
 
     .btn-special-animation {
         position: relative;
@@ -32,11 +33,11 @@
         &::before {
             display: block;
             content: '';
-            position: relative;
+            position: absolute;
             top: 0;
             left: 0;
-            width: 100px;
-            height: 100px;
+            width: 100%;
+            height: 100%;
             transform: scaleX(0);
             transform-origin: right;
             transition: transform .3s;
@@ -51,4 +52,3 @@
     }
 
 
-}
