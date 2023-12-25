@@ -81,8 +81,8 @@ body {
 	height: 100vh;
 	width: 100%;
 	transform: translateX(100%);
-	transition: .5s cubic-bezier(0.65,0.05,0.36,1);
-	background-image: $blue-gradient-solid;
+	transition: 0.5s cubic-bezier(0.65, 0.05, 0.36, 1);
+	background-image: $green-gradient-solid;
 	z-index: 100;
 
 	&--active {
@@ -129,7 +129,6 @@ body {
 .nav-items-animation {
 	animation: navItemsAnimation 1s both;
 }
-
 
 // HEADER
 .header {
@@ -195,14 +194,155 @@ body {
 	&__text {
 		font-size: 1.4rem;
 	}
-
 }
 
+// HERO-IMG
+
+.hero-img {
+	position: relative;
+	padding: 10em 2em;
+	@include heroImages('../img/hero-small.jpg');
+	text-align: center;
+	color: $pure-white;
+	overflow: hidden;
+
+	&__title {
+		font-family: 'Dancing Script', cursive;
+		margin-bottom: 0.5em;
+		font-size: 4.8rem;
+	}
+
+	&__text {
+		padding: 1em 0;
+	}
+}
+
+// TRAVELS
+
+.travels {
+	&__card {
+		position: relative;
+		margin: 1em 0;
+		height: 450px;
+		color: $pure-white;
+		text-align: center;
+		perspective: 1000px;
+
+		&:hover {
+			.travels__card-img {
+				transform: rotateY(-180deg);
+				opacity: 0;
+			}
+			.travels__card-info {
+				transform: rotateY(0deg);
+				opacity: 1;
+			}
+		}
+
+		&-img {
+			padding: 2em;
+			height: 100%;
+			border-radius: 8px;
+			background-size: cover;
+			transition: transform 1s, opacity 1s;
+
+			&--first {
+				background-image: $greenish-gradient,
+					url('../img/costa-rica-178528_640.jpg');
+			}
+
+			&--second {
+				background-image: $green-gradient, url('../img/sloth-pion.jpg');
+			}
+
+			&--third {
+				background-image: $lime-gradient, url('../img/volcano-pion.jpg');
+			}
+
+			&-title {
+				font-family: 'Dancing Script', cursive;
+				font-size: 2.8rem;
+			}
+
+			&-info {
+				position: absolute;
+				bottom: 30px;
+				right: 30px;
+				font-size: 1.8rem;
+
+				i {
+					margin-right: 3.2em;
+				}
+
+			}
+		}
+
+		&-info {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			background-image: $green-gradient-solid;
+			border-radius: 8px;
+			opacity: 0;
+			transform: rotateY(180deg);
+			transition: transform 1s, opacity 1s;
+
+			&-title {
+				@include travelCardStyle;
+				top: 1.2em;
+				font-family: 'Dancing Script', cursive;
+				font-size: 2.8rem;
+			}
+
+			&-list {
+				margin: 0 auto;
+				width: 70%;
+				list-style: none;
+
+				&-item {
+					padding: 1em;
+					font-size: 1.6rem;
+					border-bottom: 1px solid $light-white;
+				}
+
+				&:last-child {
+					border-bottom: none;
+				}
+
+			}
+
+			&-btn {
+				@include travelCardStyle;
+				bottom: 2em;
+				padding: 1em;
+				border-radius: 8px;
+				width: 80%;
+				border: none;
+				background-color: $green-color;
+				cursor: pointer;
+
+				&::before {
+					background-color: $green-color-hover;
+				}
+
+			}
+
+
+
+		}
+
+	}
+}
 
 // ====================================
 // MEDIA
 // ====================================
-@media (min-width: 576px){
+@media (min-width: 576px) {
 	.dreams {
 		&__box {
 			flex-direction: row;
@@ -229,8 +369,6 @@ body {
 			margin-bottom: 0;
 			max-height: 300px;
 		}
-
-
 	}
 }
 
@@ -260,6 +398,32 @@ body {
 		}
 	}
 
+	.hero-img {
+		padding: 30rem 2em;
+
+		hr {
+			margin: 0 auto;
+			width: 70%;
+		}
+
+		&__text {
+			font-size: 2.2rem;
+		}
+	}
+
+	.travels {
+		&__cards {
+			display: flex;
+			justify-content: center;
+			flex-wrap: wrap;
+		}
+
+		&__card {
+			margin: 1em;
+			width: 45%;
+		}
+
+	}
 }
 
 @media (min-width: 992px) {
@@ -269,7 +433,7 @@ body {
 	}
 
 	.header {
-		background-image: $blue-gradient, url('../img/Header.jpg');
+		background-image: $green-gradient, url('../img/Header.jpg');
 		&__heading {
 			font-size: 10rem;
 		}
@@ -283,7 +447,7 @@ body {
 
 	.dreams {
 		&__box {
-			margin: 5em 0 ;
+			margin: 5em 0;
 
 			&-text {
 				display: flex;
@@ -300,7 +464,22 @@ body {
 		&__text {
 			font-size: 2.2rem;
 		}
+	}
 
+	.hero-img {
+		padding: 40rem 2em;
+		background-image: $green-gradient, url('../img/hero-big.jpg');
 
+		&__title {
+			font-size: 7.2rem;
+		}
+	}
+}
+
+@media (min-width: 1100px) {
+	.travels {
+		&__card {
+			width: 30%;
+		}
 	}
 }
