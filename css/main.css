@@ -308,13 +308,14 @@ body {
 }
 .travels__card-img-title {
   font-family: "Dancing Script", cursive;
-  font-size: 2.8rem;
+  font-size: 2.6rem;
 }
 .travels__card-img-info {
   position: absolute;
   bottom: 30px;
   right: 30px;
   font-size: 1.8rem;
+  font-weight: bold;
 }
 .travels__card-img-info i {
   margin-right: 3.2em;
@@ -340,7 +341,7 @@ body {
   transform: translateX(-50%);
   top: 1.2em;
   font-family: "Dancing Script", cursive;
-  font-size: 2.8rem;
+  font-size: 2.6rem;
 }
 .travels__card-info-list {
   margin: 0 auto;
@@ -350,6 +351,7 @@ body {
 .travels__card-info-list-item {
   padding: 1em;
   font-size: 1.6rem;
+  font-weight: bolder;
   border-bottom: 1px solid #eee;
 }
 .travels__card-info-list:last-child {
